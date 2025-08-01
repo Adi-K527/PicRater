@@ -14,7 +14,6 @@ namespace PicService.Models
         [Required(ErrorMessage = "Content is required")]
         [MaxLength(1000, ErrorMessage = "Content cannot exceed 1000 characters")]
         public string Content { get; set; }
-
         public int PicId { get; set; }
         public string UserId { get; set; }
         public DateTime CommentDate { get; set; }

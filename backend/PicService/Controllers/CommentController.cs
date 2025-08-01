@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using PicService.Models;
 
@@ -14,76 +15,55 @@ namespace PicService.Controllers
     public class CommentController : ControllerBase
     {
         private readonly CommentContext _context;
+        private readonly ILogger<CommentController> _logger;
 
-        public CommentController(CommentContext context)
+        public CommentController(CommentContext context, ILogger<CommentController> logger)
         {
             _context = context;
-        }
-
-        // GET: api/Comment
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<CommentModel>>> GetCommentModel()
-        {
-            return await _context.CommentModel.ToListAsync();
+            _logger = logger;
+            _logger.LogInformation("CommentController initialized.");
         }
 
         // GET: api/Comment/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CommentModel>> GetCommentModel(int id)
+        [Authorize]
+        [HttpGet("{picid}")]
+        public async Task<ActionResult<IEnumerable<CommentModel>>> GetCommentModel(int picid)
         {
-            var commentModel = await _context.CommentModel.FindAsync(id);
+            var commentModel = await _context.CommentModel.Where(c => c.PicId == picid).ToListAsync();
 
-            if (commentModel == null)
+            if (commentModel == null || !commentModel.Any())
             {
+                _logger.LogWarning("No comments found for picture ID {Id}.", picid);
                 return NotFound();
             }
 
-            return commentModel;
-        }
-
-        // PUT: api/Comment/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCommentModel(int id, CommentModel commentModel)
-        {
-            if (id != commentModel.CommentId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(commentModel).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CommentModelExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            _logger.LogInformation("Request {Method} {Path}: Retrieved {Count} comments for picture ID {Id}", HttpContext.Request.Method, HttpContext.Request.Path, commentModel.Count, picid);
+            return StatusCode(200, new { data = commentModel });
         }
 
         // POST: api/Comment
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<CommentModel>> PostCommentModel(CommentModel commentModel)
+        [Authorize]
+        [HttpPost("{picid}")]
+        public async Task<ActionResult<CommentModel>> PostCommentModel(int picid, CommentModel commentModel)
         {
-            _context.CommentModel.Add(commentModel);
+
+            var newCommentModel = new CommentModel
+            {
+                Content = commentModel.Content,
+                PicId = picid,
+                UserId = commentModel.UserId,
+                CommentDate = DateTime.UtcNow
+            };
+
+            _context.CommentModel.Add(newCommentModel);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCommentModel", new { id = commentModel.CommentId }, commentModel);
+            _logger.LogInformation("Request {Method} {Path}: New comment added for picture ID {Id} with Comment ID {CommentId}", HttpContext.Request.Method, HttpContext.Request.Path, picid, newCommentModel.CommentId);
+            return StatusCode(201, new { id = newCommentModel.CommentId });
         }
 
         // DELETE: api/Comment/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCommentModel(int id)
         {
@@ -96,12 +76,8 @@ namespace PicService.Controllers
             _context.CommentModel.Remove(commentModel);
             await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
-
-        private bool CommentModelExists(int id)
-        {
-            return _context.CommentModel.Any(e => e.CommentId == id);
+            _logger.LogInformation("Request {Method} {Path}: Comment with ID {Id} deleted", HttpContext.Request.Method, HttpContext.Request.Path, id);
+            return StatusCode(200, new { message = "Comment deleted successfully" });
         }
     }
 }

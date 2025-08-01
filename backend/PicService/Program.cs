@@ -5,18 +5,48 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using Microsoft.AspNetCore.Http.Features;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Register API controllers
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
 
-// Load environment variables from .env file
-DotNetEnv.Env.Load(); 
+// Configure form options for file uploads
+builder.Services.Configure<FormOptions>(options =>
+{
+    options.MultipartBodyLengthLimit = 10 * 1024 * 1024; // 10MB limit
+    options.ValueLengthLimit = int.MaxValue;
+    options.MultipartHeadersLengthLimit = int.MaxValue;
+});
+
+// Add health checks
+builder.Services.AddHealthChecks();
+
+// Add CORS configuration
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        // Allow all origins in container environment, can be restricted later
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// Load environment variables from .env file (only in development)
+if (builder.Environment.IsDevelopment())
+{
+    DotNetEnv.Env.Load(); 
+}
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
-    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
     .Enrich.FromLogContext()
     .CreateLogger();
 
@@ -61,8 +91,20 @@ builder.Services.AddAuthorization(); // Add authorization services
 
 var app = builder.Build();
 
-app.UseHttpsRedirection(); // Redirect HTTP to HTTPS
+// Enable CORS middleware
+app.UseCors("AllowReactApp");
+
+// Only use HTTPS redirection in production
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseAuthentication();   // Enable authentication middleware
 app.UseAuthorization();    // Enable authorization middleware
+
+// Add health check endpoint
+app.MapHealthChecks("/health");
+
 app.MapControllers();      // Map controller routes
 app.Run();                 // Start the application

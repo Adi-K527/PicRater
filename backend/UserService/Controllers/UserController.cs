@@ -215,7 +215,7 @@ namespace UserService.Controllers
         private string GenerateToken(int user_id)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("e02ufh02ueh0wegy0wgefuqegfyfrg84yhijnnbfdbnxkjhi9877234h");
+            var key = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("Jwt__Secret") ?? throw new Exception("Missing JWT secret"));
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

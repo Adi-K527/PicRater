@@ -36,29 +36,29 @@ const Home = () => {
       
       <div className="pictures-grid">
         {pictures.map((picture) => (
-          <div key={picture.picId} className="picture-card">
+          <div key={picture.PicId} className="picture-card">
             <img 
-              src={picture.imageUrl} 
-              alt={picture.title}
+              src={picture.ImageUrl} 
+              alt={picture.Title}
               onError={(e) => {
-                console.error('Image failed to load:', picture.imageUrl);
+                console.error('Image failed to load:', picture.ImageUrl);
                 e.target.style.display = 'none';
               }}
-              onLoad={() => console.log('Image loaded successfully:', picture.imageUrl)}
+              onLoad={() => console.log('Image loaded successfully:', picture.ImageUrl)}
             />
             <div className="picture-info">
-              <h3>{picture.title}</h3>
-              <p>{picture.description}</p>
+              <h3>{picture.Title}</h3>
+              <p>{picture.Description}</p>
               <div className="picture-actions">
                 <button className="action-btn like-btn">
                   <Heart size={16} />
-                  {picture.likes}
+                  {picture.Likes}
                 </button>
                 <button className="action-btn dislike-btn">
                   <ThumbsDown size={16} />
-                  {picture.dislikes}
+                  {picture.Dislikes}
                 </button>
-                <Link to={`/picture/${picture.picId}`} className="action-btn comment-btn">
+                <Link to={`/picture/${picture.PicId}`} className="action-btn comment-btn">
                   <MessageCircle size={16} />
                   Comments
                 </Link>

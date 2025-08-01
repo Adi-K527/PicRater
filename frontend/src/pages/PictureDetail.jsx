@@ -71,51 +71,63 @@ const PictureDetail = () => {
       </Link>
       
       <div className="picture-content">
-        <img src={picture.imageUrl} alt={picture.title} />
+        <img src={picture.ImageUrl} alt={picture.Title} />
         <div className="picture-info">
-          <h1>{picture.title}</h1>
-          <p>{picture.description}</p>
+          <h1>{picture.Title}</h1>
+          <p>{picture.Description}</p>
           <div className="picture-actions">
             <button className="action-btn like-btn">
               <Heart size={16} />
-              {picture.likes}
+              {picture.Likes}
             </button>
             <button className="action-btn dislike-btn">
               <ThumbsDown size={16} />
-              {picture.dislikes}
+              {picture.Dislikes}
             </button>
           </div>
         </div>
       </div>
 
       <div className="comments-section">
-        <h3>Comments</h3>
-        {user && (
+        <h3>Comments ({comments.length})</h3>
+        
+        {user ? (
           <form onSubmit={handleAddComment} className="comment-form">
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               placeholder="Add a comment..."
               rows="3"
+              required
             />
             <button type="submit" className="btn-primary">
               <MessageCircle size={16} />
               Add Comment
             </button>
           </form>
+        ) : (
+          <p>Please <Link to="/login">login</Link> to add comments.</p>
         )}
         
         <div className="comments-list">
           {comments.map((comment) => (
-            <div key={comment.commentId} className="comment">
-              <p>{comment.content}</p>
-              <small>By User {comment.userId} • {new Date(comment.commentDate).toLocaleDateString()}</small>
+            <div key={comment.CommentId} className="comment">
+              <div className="comment-content">
+                <p>{comment.Content}</p>
+              </div>
+              <div className="comment-meta">
+                <small>
+                  By User {comment.UserId} • {new Date(comment.CommentDate).toLocaleString()}
+                </small>
+              </div>
             </div>
           ))}
         </div>
         
         {comments.length === 0 && (
-          <p>No comments yet. Be the first to comment!</p>
+          <div className="empty-comments">
+            <p>No comments yet. Be the first to comment!</p>
+          </div>
         )}
       </div>
     </div>

@@ -1,0 +1,564 @@
+2025-08-01 00:34:11.719 -05:00 [INF] Executed DbCommand (393ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-08-01 00:36:02.341 -05:00 [INF] User profile is available. Using 'C:\Users\adika\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-01 00:36:02.483 -05:00 [INF] Now listening on: https://localhost:7290
+2025-08-01 00:36:02.486 -05:00 [INF] Now listening on: http://localhost:5019
+2025-08-01 00:36:02.489 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-01 00:36:02.491 -05:00 [INF] Hosting environment: Development
+2025-08-01 00:36:02.493 -05:00 [INF] Content root path: C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService
+2025-08-01 00:36:06.074 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7290/ - null null
+2025-08-01 00:36:06.134 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7290/ - 404 0 null 62.322ms
+2025-08-01 00:36:06.157 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7290/, Response status code: 404
+2025-08-01 00:36:14.763 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7290/api/user - null null
+2025-08-01 00:36:14.770 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7290/api/user - 404 0 null 7.3838ms
+2025-08-01 00:36:14.775 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7290/api/user, Response status code: 404
+2025-08-01 00:36:18.003 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7290/api/user/health - null null
+2025-08-01 00:36:18.013 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.HealthCheck (UserService)'
+2025-08-01 00:36:18.046 -05:00 [INF] Route matched with {action = "HealthCheck", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult HealthCheck() on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:36:18.142 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-01 00:36:18.195 -05:00 [INF] Executed action UserService.Controllers.UserController.HealthCheck (UserService) in 141.9952ms
+2025-08-01 00:36:18.197 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.HealthCheck (UserService)'
+2025-08-01 00:36:18.201 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7290/api/user/health - 200 null application/json; charset=utf-8 197.783ms
+2025-08-01 00:36:24.662 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7290/api/user/User/5 - null null
+2025-08-01 00:36:24.664 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7290/api/user/User/5 - 404 0 null 2.3696ms
+2025-08-01 00:36:24.667 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7290/api/user/User/5, Response status code: 404
+2025-08-01 00:36:57.590 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7290/api/user/User/5 - null null
+2025-08-01 00:36:57.594 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7290/api/user/User/5 - 404 0 null 3.4029ms
+2025-08-01 00:36:57.598 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7290/api/user/User/5, Response status code: 404
+2025-08-01 00:37:02.713 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7290/api/user/User/5 - null null
+2025-08-01 00:37:02.716 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7290/api/user/User/5 - 404 0 null 3.5984ms
+2025-08-01 00:37:02.720 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7290/api/user/User/5, Response status code: 404
+2025-08-01 00:38:32.733 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/user/User/register - application/json 104
+2025-08-01 00:38:32.744 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/user/User/register - 404 0 null 10.7028ms
+2025-08-01 00:38:32.747 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:7290/api/user/User/register, Response status code: 404
+2025-08-01 00:38:54.014 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/register - application/json 104
+2025-08-01 00:38:54.018 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:38:54.029 -05:00 [INF] Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] RegisterUser(RegisterUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:38:55.228 -05:00 [ERR] Failed executing DbCommand (84ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserModel" ("FirstName", "LastName", "Password", "RegistrationDate", "Username")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "UserId";
+2025-08-01 00:38:55.261 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'UserContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42703: column "FirstName" of relation "UserModel" does not exist
+
+POSITION: 26
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column "FirstName" of relation "UserModel" does not exist
+    Position: 26
+    File: parse_target.c
+    Line: 1065
+    Routine: checkInsertTargets
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42703: column "FirstName" of relation "UserModel" does not exist
+
+POSITION: 26
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column "FirstName" of relation "UserModel" does not exist
+    Position: 26
+    File: parse_target.c
+    Line: 1065
+    Routine: checkInsertTargets
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-01 00:38:55.272 -05:00 [ERR] Error registering user
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42703: column "FirstName" of relation "UserModel" does not exist
+
+POSITION: 26
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column "FirstName" of relation "UserModel" does not exist
+    Position: 26
+    File: parse_target.c
+    Line: 1065
+    Routine: checkInsertTargets
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UserService.Controllers.UserController.RegisterUser(RegisterUserDto registerUserDto) in C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService\Controllers\UserController.cs:line 140
+2025-08-01 00:38:55.298 -05:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-08-01 00:38:55.301 -05:00 [INF] Executed action UserService.Controllers.UserController.RegisterUser (UserService) in 1270.2509ms
+2025-08-01 00:38:55.303 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:38:55.308 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/register - 500 null text/plain; charset=utf-8 1293.5675ms
+2025-08-01 00:40:43.839 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/register - application/json 104
+2025-08-01 00:40:43.842 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:40:43.843 -05:00 [INF] Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] RegisterUser(RegisterUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:40:43.937 -05:00 [ERR] Failed executing DbCommand (47ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserModel" ("FirstName", "LastName", "Password", "RegistrationDate", "Username")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "UserId";
+2025-08-01 00:40:43.942 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'UserContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42703: column "RegistrationDate" of relation "UserModel" does not exist
+
+POSITION: 63
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column "RegistrationDate" of relation "UserModel" does not exist
+    Position: 63
+    File: parse_target.c
+    Line: 1065
+    Routine: checkInsertTargets
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42703: column "RegistrationDate" of relation "UserModel" does not exist
+
+POSITION: 63
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column "RegistrationDate" of relation "UserModel" does not exist
+    Position: 63
+    File: parse_target.c
+    Line: 1065
+    Routine: checkInsertTargets
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-01 00:40:43.953 -05:00 [ERR] Error registering user
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42703: column "RegistrationDate" of relation "UserModel" does not exist
+
+POSITION: 63
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column "RegistrationDate" of relation "UserModel" does not exist
+    Position: 63
+    File: parse_target.c
+    Line: 1065
+    Routine: checkInsertTargets
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UserService.Controllers.UserController.RegisterUser(RegisterUserDto registerUserDto) in C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService\Controllers\UserController.cs:line 140
+2025-08-01 00:40:43.962 -05:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-08-01 00:40:43.963 -05:00 [INF] Executed action UserService.Controllers.UserController.RegisterUser (UserService) in 119.0794ms
+2025-08-01 00:40:43.964 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:40:43.966 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/register - 500 null text/plain; charset=utf-8 126.1081ms
+2025-08-01 00:42:13.479 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/register - application/json 104
+2025-08-01 00:42:13.483 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:42:13.484 -05:00 [INF] Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] RegisterUser(RegisterUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:42:13.549 -05:00 [INF] Executed DbCommand (52ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserModel" ("FirstName", "LastName", "Password", "RegistrationDate", "Username")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "UserId";
+2025-08-01 00:42:13.582 -05:00 [INF] User test registered successfully
+2025-08-01 00:42:13.584 -05:00 [INF] Generated token for user test
+2025-08-01 00:42:13.586 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[UserService.Models.UserModel, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-01 00:42:13.597 -05:00 [INF] Executed action UserService.Controllers.UserController.RegisterUser (UserService) in 111.4792ms
+2025-08-01 00:42:13.599 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:42:13.600 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/register - 201 null application/json; charset=utf-8 120.888ms
+2025-08-01 00:42:35.724 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/register - application/json 104
+2025-08-01 00:42:35.727 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:42:35.728 -05:00 [INF] Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] RegisterUser(RegisterUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:42:35.780 -05:00 [INF] Executed DbCommand (49ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserModel" ("FirstName", "LastName", "Password", "RegistrationDate", "Username")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "UserId";
+2025-08-01 00:42:35.785 -05:00 [INF] User test registered successfully
+2025-08-01 00:42:35.786 -05:00 [INF] Generated token for user test
+2025-08-01 00:42:35.787 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[UserService.Models.UserModel, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-01 00:42:35.788 -05:00 [INF] Executed action UserService.Controllers.UserController.RegisterUser (UserService) in 58.2281ms
+2025-08-01 00:42:35.789 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:42:35.790 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/register - 201 null application/json; charset=utf-8 65.6785ms
+2025-08-01 00:43:40.625 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/register - application/json 104
+2025-08-01 00:43:40.628 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:43:40.629 -05:00 [INF] Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] RegisterUser(RegisterUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:43:40.702 -05:00 [ERR] Failed executing DbCommand (69ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserModel" ("FirstName", "LastName", "Password", "RegistrationDate", "Username")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "UserId";
+2025-08-01 00:43:40.737 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'UserContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "UserModel_Username_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "UserModel_Username_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: UserModel
+    ConstraintName: UserModel_Username_key
+    File: nbtinsert.c
+    Line: 666
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "UserModel_Username_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "UserModel_Username_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: UserModel
+    ConstraintName: UserModel_Username_key
+    File: nbtinsert.c
+    Line: 666
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-01 00:43:40.751 -05:00 [ERR] Error registering user
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "UserModel_Username_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "UserModel_Username_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: UserModel
+    ConstraintName: UserModel_Username_key
+    File: nbtinsert.c
+    Line: 666
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at UserService.Controllers.UserController.RegisterUser(RegisterUserDto registerUserDto) in C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService\Controllers\UserController.cs:line 140
+2025-08-01 00:43:40.760 -05:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-08-01 00:43:40.772 -05:00 [INF] Executed action UserService.Controllers.UserController.RegisterUser (UserService) in 141.2702ms
+2025-08-01 00:43:40.774 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:43:40.776 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/register - 500 null text/plain; charset=utf-8 150.4586ms
+2025-08-01 00:43:47.653 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/register - application/json 105
+2025-08-01 00:43:47.655 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:43:47.656 -05:00 [INF] Route matched with {action = "RegisterUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] RegisterUser(RegisterUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:43:47.707 -05:00 [INF] Executed DbCommand (48ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (DbType = DateTime), @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserModel" ("FirstName", "LastName", "Password", "RegistrationDate", "Username")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "UserId";
+2025-08-01 00:43:47.709 -05:00 [INF] User test1 registered successfully
+2025-08-01 00:43:47.710 -05:00 [INF] Generated token for user test1
+2025-08-01 00:43:47.711 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType3`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[UserService.Models.UserModel, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-01 00:43:47.713 -05:00 [INF] Executed action UserService.Controllers.UserController.RegisterUser (UserService) in 55.7958ms
+2025-08-01 00:43:47.714 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.RegisterUser (UserService)'
+2025-08-01 00:43:47.715 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/register - 201 null application/json; charset=utf-8 62.0596ms
+2025-08-01 00:44:07.803 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/login - application/json 105
+2025-08-01 00:44:07.805 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.LoginUser (UserService)'
+2025-08-01 00:44:07.809 -05:00 [INF] Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] LoginUser(LoginUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:44:08.489 -05:00 [INF] Executed DbCommand (43ms) [Parameters=[@__loginUserDto_Username_0='?', @__loginUserDto_Password_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."UserId", u."FirstName", u."LastName", u."Password", u."RegistrationDate", u."Username"
+FROM "UserModel" AS u
+WHERE u."Username" = @__loginUserDto_Username_0 AND u."Password" = @__loginUserDto_Password_1
+LIMIT 1
+2025-08-01 00:44:08.501 -05:00 [ERR] Error logging in
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at UserService.Controllers.UserController.GenerateToken(Int32 user_id) in C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService\Controllers\UserController.cs:line 184
+   at UserService.Controllers.UserController.LoginUser(LoginUserDto loginUserDto) in C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService\Controllers\UserController.cs:line 112
+2025-08-01 00:44:08.503 -05:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-08-01 00:44:08.504 -05:00 [INF] Executed action UserService.Controllers.UserController.LoginUser (UserService) in 693.0984ms
+2025-08-01 00:44:08.505 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.LoginUser (UserService)'
+2025-08-01 00:44:08.506 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/login - 500 null text/plain; charset=utf-8 702.155ms
+2025-08-01 00:44:16.268 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/login - application/json 54
+2025-08-01 00:44:16.271 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.LoginUser (UserService)'
+2025-08-01 00:44:16.272 -05:00 [INF] Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] LoginUser(LoginUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:44:16.324 -05:00 [INF] Executed DbCommand (45ms) [Parameters=[@__loginUserDto_Username_0='?', @__loginUserDto_Password_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."UserId", u."FirstName", u."LastName", u."Password", u."RegistrationDate", u."Username"
+FROM "UserModel" AS u
+WHERE u."Username" = @__loginUserDto_Username_0 AND u."Password" = @__loginUserDto_Password_1
+LIMIT 1
+2025-08-01 00:44:16.328 -05:00 [ERR] Error logging in
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at UserService.Controllers.UserController.GenerateToken(Int32 user_id) in C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService\Controllers\UserController.cs:line 184
+   at UserService.Controllers.UserController.LoginUser(LoginUserDto loginUserDto) in C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService\Controllers\UserController.cs:line 112
+2025-08-01 00:44:16.331 -05:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-08-01 00:44:16.332 -05:00 [INF] Executed action UserService.Controllers.UserController.LoginUser (UserService) in 58.6422ms
+2025-08-01 00:44:16.334 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.LoginUser (UserService)'
+2025-08-01 00:44:16.335 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/login - 500 null text/plain; charset=utf-8 67.8924ms
+2025-08-01 00:48:28.495 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/login - application/json 54
+2025-08-01 00:48:28.497 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.LoginUser (UserService)'
+2025-08-01 00:48:28.498 -05:00 [INF] Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] LoginUser(LoginUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:48:28.548 -05:00 [INF] Executed DbCommand (46ms) [Parameters=[@__loginUserDto_Username_0='?', @__loginUserDto_Password_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."UserId", u."FirstName", u."LastName", u."Password", u."RegistrationDate", u."Username"
+FROM "UserModel" AS u
+WHERE u."Username" = @__loginUserDto_Username_0 AND u."Password" = @__loginUserDto_Password_1
+LIMIT 1
+2025-08-01 00:48:28.551 -05:00 [ERR] Error logging in
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at UserService.Controllers.UserController.GenerateToken(Int32 user_id) in C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService\Controllers\UserController.cs:line 184
+   at UserService.Controllers.UserController.LoginUser(LoginUserDto loginUserDto) in C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService\Controllers\UserController.cs:line 112
+2025-08-01 00:48:28.553 -05:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-08-01 00:48:28.554 -05:00 [INF] Executed action UserService.Controllers.UserController.LoginUser (UserService) in 54.5694ms
+2025-08-01 00:48:28.555 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.LoginUser (UserService)'
+2025-08-01 00:48:28.556 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/login - 500 null text/plain; charset=utf-8 61.0422ms
+2025-08-01 00:48:51.640 -05:00 [INF] Application is shutting down...
+2025-08-01 00:49:19.337 -05:00 [INF] User profile is available. Using 'C:\Users\adika\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-01 00:49:19.491 -05:00 [INF] Now listening on: https://localhost:7290
+2025-08-01 00:49:19.492 -05:00 [INF] Now listening on: http://localhost:5019
+2025-08-01 00:49:19.495 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-01 00:49:19.496 -05:00 [INF] Hosting environment: Development
+2025-08-01 00:49:19.497 -05:00 [INF] Content root path: C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService
+2025-08-01 00:49:26.647 -05:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/User/login - application/json 54
+2025-08-01 00:49:26.697 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.LoginUser (UserService)'
+2025-08-01 00:49:26.726 -05:00 [INF] Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] LoginUser(LoginUserDto) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:49:27.892 -05:00 [INF] Executed DbCommand (82ms) [Parameters=[@__loginUserDto_Username_0='?', @__loginUserDto_Password_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."UserId", u."FirstName", u."LastName", u."Password", u."RegistrationDate", u."Username"
+FROM "UserModel" AS u
+WHERE u."Username" = @__loginUserDto_Username_0 AND u."Password" = @__loginUserDto_Password_1
+LIMIT 1
+2025-08-01 00:49:27.984 -05:00 [INF] User test1 logged in successfully
+2025-08-01 00:49:27.987 -05:00 [INF] Generated token for user test1
+2025-08-01 00:49:27.992 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[UserService.Models.UserModel, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-01 00:49:28.015 -05:00 [INF] Executed action UserService.Controllers.UserController.LoginUser (UserService) in 1283.1931ms
+2025-08-01 00:49:28.021 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.LoginUser (UserService)'
+2025-08-01 00:49:28.029 -05:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/User/login - 200 null application/json; charset=utf-8 1384.1547ms
+2025-08-01 00:50:00.106 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/User/1 - application/json 54
+2025-08-01 00:50:00.113 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-08-01 00:50:00.119 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-01 00:50:00.120 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/User/1 - 401 0 null 14.728ms
+2025-08-01 00:50:14.686 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/User/1 - application/json 54
+2025-08-01 00:50:14.722 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.GetUserModel (UserService)'
+2025-08-01 00:50:14.728 -05:00 [INF] Route matched with {action = "GetUserModel", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] GetUserModel(Int32) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:50:14.825 -05:00 [INF] Executed DbCommand (53ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."UserId", u."FirstName", u."LastName", u."Password", u."RegistrationDate", u."Username"
+FROM "UserModel" AS u
+WHERE u."UserId" = @__p_0
+LIMIT 1
+2025-08-01 00:50:14.828 -05:00 [INF] Request GET /api/User/1 User with ID 1 retrieved successfully
+2025-08-01 00:50:14.832 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[UserService.Models.UserModel, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-01 00:50:14.836 -05:00 [INF] Executed action UserService.Controllers.UserController.GetUserModel (UserService) in 106.0956ms
+2025-08-01 00:50:14.838 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.GetUserModel (UserService)'
+2025-08-01 00:50:14.840 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/User/1 - 200 null application/json; charset=utf-8 153.1807ms
+2025-08-01 00:52:28.726 -05:00 [INF] Application is shutting down...
+2025-08-01 00:52:32.535 -05:00 [INF] User profile is available. Using 'C:\Users\adika\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-01 00:52:32.681 -05:00 [INF] Now listening on: https://localhost:7290
+2025-08-01 00:52:32.682 -05:00 [INF] Now listening on: http://localhost:5019
+2025-08-01 00:52:32.686 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-01 00:52:32.688 -05:00 [INF] Hosting environment: Development
+2025-08-01 00:52:32.688 -05:00 [INF] Content root path: C:\Users\adika\OneDrive\Desktop\beprojects\picrater\backend\UserService
+2025-08-01 00:52:35.609 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/User/1 - application/json 54
+2025-08-01 00:52:35.695 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.GetUserModel (UserService)'
+2025-08-01 00:52:35.720 -05:00 [INF] Route matched with {action = "GetUserModel", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] GetUserModel(Int32) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:52:35.817 -05:00 [WRN] User with ID 4 attempted to access user with ID 1
+2025-08-01 00:52:35.822 -05:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2025-08-01 00:52:35.826 -05:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-08-01 00:52:35.830 -05:00 [INF] Executed action UserService.Controllers.UserController.GetUserModel (UserService) in 102.0957ms
+2025-08-01 00:52:35.842 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.GetUserModel (UserService)'
+2025-08-01 00:52:35.848 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/User/1 - 403 0 null 239.449ms
+2025-08-01 00:52:45.057 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/User/4 - application/json 54
+2025-08-01 00:52:45.063 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.GetUserModel (UserService)'
+2025-08-01 00:52:45.064 -05:00 [INF] Route matched with {action = "GetUserModel", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[UserService.Models.UserModel]] GetUserModel(Int32) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:52:46.142 -05:00 [INF] Executed DbCommand (90ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."UserId", u."FirstName", u."LastName", u."Password", u."RegistrationDate", u."Username"
+FROM "UserModel" AS u
+WHERE u."UserId" = @__p_0
+LIMIT 1
+2025-08-01 00:52:46.201 -05:00 [INF] Request GET /api/User/4 User with ID 4 retrieved successfully
+2025-08-01 00:52:46.209 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[UserService.Models.UserModel, UserService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-01 00:52:46.258 -05:00 [INF] Executed action UserService.Controllers.UserController.GetUserModel (UserService) in 1192.2807ms
+2025-08-01 00:52:46.263 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.GetUserModel (UserService)'
+2025-08-01 00:52:46.272 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/User/4 - 200 null application/json; charset=utf-8 1215.1482ms
+2025-08-01 00:52:57.627 -05:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7290/api/User/1 - application/json 54
+2025-08-01 00:52:57.633 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.DeleteUserModel (UserService)'
+2025-08-01 00:52:57.638 -05:00 [INF] Route matched with {action = "DeleteUserModel", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUserModel(Int32) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:52:57.644 -05:00 [WRN] User with ID 4 attempted to delete user with ID 1
+2025-08-01 00:52:57.645 -05:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2025-08-01 00:52:57.646 -05:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-08-01 00:52:57.648 -05:00 [INF] Executed action UserService.Controllers.UserController.DeleteUserModel (UserService) in 7.6427ms
+2025-08-01 00:52:57.648 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.DeleteUserModel (UserService)'
+2025-08-01 00:52:57.649 -05:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7290/api/User/1 - 403 0 null 22.1316ms
+2025-08-01 00:53:01.189 -05:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7290/api/User/4 - application/json 54
+2025-08-01 00:53:01.193 -05:00 [INF] Executing endpoint 'UserService.Controllers.UserController.DeleteUserModel (UserService)'
+2025-08-01 00:53:01.194 -05:00 [INF] Route matched with {action = "DeleteUserModel", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUserModel(Int32) on controller UserService.Controllers.UserController (UserService).
+2025-08-01 00:53:01.260 -05:00 [INF] Executed DbCommand (49ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."UserId", u."FirstName", u."LastName", u."Password", u."RegistrationDate", u."Username"
+FROM "UserModel" AS u
+WHERE u."UserId" = @__p_0
+LIMIT 1
+2025-08-01 00:53:01.637 -05:00 [INF] Executed DbCommand (317ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "UserModel"
+WHERE "UserId" = @p0;
+2025-08-01 00:53:01.649 -05:00 [INF] Request DELETE /api/User/4 User with ID 4 deleted successfully
+2025-08-01 00:53:01.652 -05:00 [INF] User with ID 4 deleted successfully
+2025-08-01 00:53:01.655 -05:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType4`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-01 00:53:01.660 -05:00 [INF] Executed action UserService.Controllers.UserController.DeleteUserModel (UserService) in 464.2751ms
+2025-08-01 00:53:01.662 -05:00 [INF] Executed endpoint 'UserService.Controllers.UserController.DeleteUserModel (UserService)'
+2025-08-01 00:53:01.663 -05:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7290/api/User/4 - 200 null application/json; charset=utf-8 474.0048ms

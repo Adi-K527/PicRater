@@ -24,6 +24,20 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   associate_public_ip_address = true
+
+  user_data = <<-EOF
+    #!/bin/bash
+    sudo yum update -y
+    sudo yum install -y docker
+
+    sudo amazon-linux-extras enable selinux-ng
+    sudo yum clean metadata
+    sudo yum install -y selinux-policy-targeted
+
+    curl -sfL https://get.k3s.io | sh -
+
+    sudo chmod 644 /etc/rancher/k3s/k3s.yaml
+  EOF
   tags = {
     Name = var.name
   }

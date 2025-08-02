@@ -21,6 +21,14 @@ provider "aws" {
   secret_key = var.secret_access_key
 }
 
+resource "aws_ecr_repository" "user_service_repo" {
+  name = "user-service-repo"
+}
+
+resource "aws_ecr_repository" "pic_service_repo" {
+  name = "pic-service-repo"
+}
+
 module "pic_bucket" {
   source     = "./modules/S3"
   bucket_name = "picrater-pics-8164"

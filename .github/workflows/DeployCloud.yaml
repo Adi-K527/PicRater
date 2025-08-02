@@ -39,3 +39,22 @@ jobs:
           cd terraform
           terraform init
           terraform apply -auto-approve -var "access_key=${{ env.ACCESS_KEY }}" -var "secret_access_key=${{ env.SECRET_ACCESS_KEY }}"
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@62f4f872db3836360b72999f4b87f1ff13310f3a
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG:    ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/user-service-repo:$IMAGE_TAG ./backend --build-arg Service_Name=UserService
+          docker push $ECR_REGISTRY/user-service-repo:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/user-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+          docker build -t $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG ./backend --build-arg Service_Name=PictureService
+          docker push $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/pic-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
+      

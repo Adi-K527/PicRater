@@ -25,3 +25,8 @@ module "pic_bucket" {
   source     = "./modules/S3"
   bucket_name = "picrater-pics-8164"
 }
+
+module "backend_server" {
+  source = "./modules/EC2"
+  name = "backend-server"
+}

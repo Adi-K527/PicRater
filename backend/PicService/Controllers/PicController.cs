@@ -164,7 +164,7 @@ namespace PicService.Controllers
                 throw new InvalidOperationException("AWS credentials are not configured");
             }
 
-            var keyName = Guid.NewGuid() + "_" + file.FileName;
+            var keyName = "pics/" +Guid.NewGuid() + "_" + file.FileName;
 
             using var client = new AmazonS3Client(_accessKey, _secretKey, Amazon.RegionEndpoint.USEast1);
             using var stream = file.OpenReadStream();

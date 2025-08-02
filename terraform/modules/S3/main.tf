@@ -52,3 +52,11 @@ resource "aws_s3_bucket_cors_configuration" "s3_bucket_cors" {
         max_age_seconds = 3000
     }
 }
+
+resource "aws_s3_bucket_website_configuration" "s3_static_hosting" {
+  bucket = aws_s3_bucket.s3_bucket.id
+
+  index_document {
+    suffix = "index.html"
+  }
+}

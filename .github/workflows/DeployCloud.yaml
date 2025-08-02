@@ -10,6 +10,7 @@ env:
   SECRET_ACCESS_KEY:   ${{ secrets.SECRET_ACCESS_KEY }}
   JWT_SECRET:          ${{ secrets.JWT_SECRET }}
   DB_STRING:           ${{ secrets.DB_STRING }}
+  SSH_PRIVATE_KEY:     ${{ secrets.SSH_PRIVATE_KEY }}
 
 
 jobs:
@@ -38,9 +39,28 @@ jobs:
       - name: Deploy cloud
         id: deploy-cloud
         run: |
-          cd terraform
+          cd terraform/aws
           terraform init
           terraform apply -auto-approve -var "access_key=${{ env.ACCESS_KEY }}" -var "secret_access_key=${{ env.SECRET_ACCESS_KEY }}"
+
+      - name: Get server IP
+        id: get-ip
+        run: |
+          cd terraform
+          echo "ip=$(terraform output -raw public_ip)" >> $GITHUB_OUTPUT
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ steps.get-ip.outputs.ip }} >> ~/.ssh/known_hosts
+
+      - name: Fetch kubeconfig from server
+        run: |
+          scp -i ~/.ssh/id_rsa ubuntu@${{ steps.get-ip.outputs.ip }}:/etc/rancher/k3s/k3s.yaml ./kubeconfig.yaml
+          # Optional: Replace server IP in kubeconfig with public IP
+          sed -i "s/127.0.0.1/${{ steps.get-ip.outputs.ip }}/" kubeconfig.yaml
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -59,3 +79,6 @@ jobs:
           docker build -t $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG ./backend --build-arg Service_Name=PicService --build-arg Jwt__Secret=${{ env.JWT_SECRET }} --build-arg Db__Connection="${{ env.DB_STRING }}"
           docker push $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/pic-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+
+      

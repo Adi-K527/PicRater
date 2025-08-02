@@ -42,25 +42,19 @@ jobs:
           cd terraform/aws
           terraform init
           terraform apply -auto-approve -var "access_key=${{ env.ACCESS_KEY }}" -var "secret_access_key=${{ env.SECRET_ACCESS_KEY }}"
-
-      - name: Get server IP
-        id: get-ip
-        run: |
-          cd terraform
           echo "ip=$(terraform output -raw public_ip)" >> $GITHUB_OUTPUT
-
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ steps.get-ip.outputs.ip }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ steps.deploy-cloud.outputs.ip }} >> ~/.ssh/known_hosts
 
       - name: Fetch kubeconfig from server
         run: |
-          scp -i ~/.ssh/id_rsa ubuntu@${{ steps.get-ip.outputs.ip }}:/etc/rancher/k3s/k3s.yaml ./kubeconfig.yaml
+          scp -i ~/.ssh/id_rsa ubuntu@${{ steps.deploy-cloud.outputs.ip }}:/etc/rancher/k3s/k3s.yaml ./kubeconfig.yaml
           # Optional: Replace server IP in kubeconfig with public IP
-          sed -i "s/127.0.0.1/${{ steps.get-ip.outputs.ip }}/" kubeconfig.yaml
+          sed -i "s/127.0.0.1/${{ steps.deploy-cloud.outputs.ip }}/" kubeconfig.yaml
 
       - name: Login to Amazon ECR
         id: login-ecr

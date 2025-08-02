@@ -20,4 +20,4 @@ WORKDIR /app
 
 COPY --from=build /app/out ./
 
-ENTRYPOINT dotnet ${Service_Name}.dll
+ENTRYPOINT ["sh", "-c", "dotnet ${Service_Name}/${Service_Name}.dll"]

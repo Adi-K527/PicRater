@@ -49,7 +49,11 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 -d > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ steps.deploy-cloud.outputs.ip }} >> ~/.ssh/known_hosts
+
+          echo "[INFO] Attempting manual SSH"
           scp -i ~/.ssh/id_rsa ubuntu@${{ steps.deploy-cloud.outputs.ip }}:/etc/rancher/k3s/k3s.yaml ./kubeconfig.yaml
+
+          echo "[INFO] Compying to runner"
           sed -i "s/127.0.0.1/${{ steps.deploy-cloud.outputs.ip }}/" kubeconfig.yaml
 
       - name: Login to Amazon ECR

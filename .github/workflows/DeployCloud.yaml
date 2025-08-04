@@ -51,7 +51,7 @@ jobs:
           ssh-keyscan -H ${{ steps.deploy-cloud.outputs.ip }} >> ~/.ssh/known_hosts
 
           echo "[INFO] Attempting manual SSH"
-          scp -i ~/.ssh/id_rsa ubuntu@${{ steps.deploy-cloud.outputs.ip }}:/etc/rancher/k3s/k3s.yaml ./kubeconfig.yaml
+          scp -i ~/.ssh/id_rsa ec2-user@${{ steps.deploy-cloud.outputs.ip }}:/etc/rancher/k3s/k3s.yaml ./kubeconfig.yaml
 
           echo "[INFO] Compying to runner"
           sed -i "s/127.0.0.1/${{ steps.deploy-cloud.outputs.ip }}/" kubeconfig.yaml

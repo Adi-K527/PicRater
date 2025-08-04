@@ -60,10 +60,9 @@ jobs:
       - name: Deploy k8s
         id: deploy-k8s
         run: |
-          cd terraform/aws
+          cd terraform/k8s
           terraform init
-          terraform apply -auto-approve -var "access_key=${{ env.ACCESS_KEY }}" -var "secret_access_key=${{ env.SECRET_ACCESS_KEY }}"
-          echo "ip=$(terraform output -raw public_ip)" >> $GITHUB_OUTPUT
+          terraform apply -auto-approve 
 
 
       - name: Login to Amazon ECR

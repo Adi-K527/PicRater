@@ -3,9 +3,16 @@ resource "aws_security_group" "allow_ssh" {
     description = "Allow SSH traffic"
     vpc_id = "vpc-0af49312582e83e49"
     ingress {
-        from_port = 22
-        to_port = 22
-        protocol = "tcp"
+        from_port   = 22
+        to_port     = 22
+        protocol    = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port   = 6443
+        to_port     = 6443
+        protocol    = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
     egress {

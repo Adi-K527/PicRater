@@ -75,5 +75,3 @@ jobs:
           echo "image=$ECR_REGISTRY/pic-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
 
-          
-      

@@ -51,18 +51,20 @@ jobs:
           ssh-keyscan -H ${{ steps.deploy-cloud.outputs.ip }} >> ~/.ssh/known_hosts
 
           echo "[INFO] Attempting manual SSH"
-          scp -i ~/.ssh/id_rsa ec2-user@${{ steps.deploy-cloud.outputs.ip }}:/etc/rancher/k3s/k3s.yaml ./terraform/k8s/kubeconfig.yaml
-          
+          scp -i ~/.ssh/id_rsa ec2-user@${{ steps.deploy-cloud.outputs.ip }}:/etc/rancher/k3s/k3s.yaml /terraform/k8s/kubeconfig.yaml
+
           echo "[INFO] Compying to runner"
-          sed -i "s/127.0.0.1/${{ steps.deploy-cloud.outputs.ip }}/" kubeconfig.yaml
+          sed -i "s/127.0.0.1/${{ steps.deploy-cloud.outputs.ip }}/" /terraform/k8s/kubeconfig.yaml
 
 
       - name: Deploy k8s
         id: deploy-k8s
         run: |
-          cd terraform/k8s
+          cd terraform/aws
           terraform init
-          terraform apply -auto-approve
+          terraform apply -auto-approve -var "access_key=${{ env.ACCESS_KEY }}" -var "secret_access_key=${{ env.SECRET_ACCESS_KEY }}"
+          echo "ip=$(terraform output -raw public_ip)" >> $GITHUB_OUTPUT
+
 
       - name: Login to Amazon ECR
         id: login-ecr

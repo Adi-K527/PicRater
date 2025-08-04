@@ -1,5 +1,6 @@
 provider "kubernetes" {
   config_path = "${path.module}/../../kubeconfig.yaml"
+  insecure    = true
 }
 
 resource "kubernetes_deployment" "dummy" {

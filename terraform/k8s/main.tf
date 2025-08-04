@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_path = "${path.module}/../kubeconfig.yaml"
+  config_path = "${path.module}/../../kubeconfig.yaml"
 }
 
 resource "kubernetes_deployment" "dummy" {

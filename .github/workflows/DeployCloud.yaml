@@ -47,11 +47,8 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 777 ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ steps.deploy-cloud.outputs.ip }} >> ~/.ssh/known_hosts
-
-      - name: Fetch kubeconfig from server
-        run: |
           scp -i ~/.ssh/id_rsa ubuntu@${{ steps.deploy-cloud.outputs.ip }}:/etc/rancher/k3s/k3s.yaml ./kubeconfig.yaml
           sed -i "s/127.0.0.1/${{ steps.deploy-cloud.outputs.ip }}/" kubeconfig.yaml
 

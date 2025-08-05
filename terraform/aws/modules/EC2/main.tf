@@ -54,3 +54,5 @@ resource "aws_instance" "instance" {
     Name = var.name
   }
 }
+
+

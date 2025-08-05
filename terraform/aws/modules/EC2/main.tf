@@ -44,6 +44,11 @@ resource "aws_instance" "instance" {
     curl -sfL https://get.k3s.io | sh -
 
     sudo chmod 777 /etc/rancher/k3s/k3s.yaml
+
+    aws ecr get-login-password --region us-east-1 | docker login \
+    --username AWS \
+    --password-stdin 206479108282.dkr.ecr.us-east-1.amazonaws.com
+
   EOF
   tags = {
     Name = var.name

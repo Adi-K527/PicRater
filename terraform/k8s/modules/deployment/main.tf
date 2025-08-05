@@ -35,8 +35,6 @@ resource "kubernetes_deployment" "deployment" {
                 image_pull_secrets {
                   name = "ecr-secret"
                 }
-
-                restart_policy = "never"
             }
         }
     }

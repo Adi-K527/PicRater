@@ -18,7 +18,7 @@ module "user_service" {
 
 module "pic_service" {
   source = "./modules/deployment"
-  app_name = "pic_service"
+  app_name = "pic-service"
   replicas = 1
   image    = "${var.account_id}.dkr.ecr.us-east-1.amazonaws.com/pic-service-repo:${var.image_tag}"
 }

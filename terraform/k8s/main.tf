@@ -23,7 +23,7 @@ module "user_service_nodeport" {
   node_port = 30080
 }
 
-module "user_service_nodeport" {
+module "pic_service_nodeport" {
   source = "./modules/service"
   app_name = "pic-service"
   node_port = 30081

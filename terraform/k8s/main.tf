@@ -34,3 +34,4 @@ resource "kubernetes_deployment" "dummy" {
     }
   }
 }
+

@@ -28,7 +28,7 @@ resource "kubernetes_deployment" "deployment" {
                     image = var.image
             
                     port {
-                        container_port = 80
+                        container_port = 8080
                     }
                 }
 

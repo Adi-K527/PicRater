@@ -16,3 +16,15 @@ module "pic_service" {
   replicas = 1
   image    = "${var.account_id}.dkr.ecr.us-east-1.amazonaws.com/pic-service-repo:${var.image_tag}"
 }
+
+module "user_service_nodeport" {
+  source = "./modules/service"
+  app_name = "user-service"
+  node_port = 30080
+}
+
+module "user_service_nodeport" {
+  source = "./modules/service"
+  app_name = "pic-service"
+  node_port = 30081
+}

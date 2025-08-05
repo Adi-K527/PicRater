@@ -14,6 +14,7 @@ module "user_service" {
   app_name = "user-service"
   replicas = 2
   image    = "${var.account_id}.dkr.ecr.us-east-1.amazonaws.com/user-service-repo:${var.image_tag}"
+  depends_on = [ module.ecr_secret ]
 }
 
 module "pic_service" {
@@ -21,4 +22,5 @@ module "pic_service" {
   app_name = "pic-service"
   replicas = 1
   image    = "${var.account_id}.dkr.ecr.us-east-1.amazonaws.com/pic-service-repo:${var.image_tag}"
+  depends_on = [ module.ecr_secret ]
 }

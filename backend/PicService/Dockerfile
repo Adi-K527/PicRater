@@ -7,10 +7,9 @@ ARG Db__Connection
 ENV Jwt__Secret=$Jwt__Secret
 ENV Db__Connection=$Db__Connection
 
-COPY PicService.csproj ./
-RUN dotnet restore PicService.csproj
+COPY . .
 
-COPY PicService/ ./
+RUN dotnet restore PicService.csproj
 RUN dotnet publish PicService.csproj -c Release -o /app/out
 
 # Runtime stage

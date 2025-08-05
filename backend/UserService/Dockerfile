@@ -7,10 +7,9 @@ ARG Db__Connection
 ENV Jwt__Secret=$Jwt__Secret
 ENV Db__Connection=$Db__Connection
 
-COPY UserService.csproj ./
-RUN dotnet restore UserService.csproj
+COPY . .
 
-COPY UserService/ ./
+RUN dotnet restore UserService.csproj
 RUN dotnet publish UserService.csproj -c Release -o /app/out
 
 # Runtime stage

@@ -49,6 +49,23 @@ resource "aws_instance" "instance" {
     --username AWS \
     --password-stdin 206479108282.dkr.ecr.us-east-1.amazonaws.com
 
+    aws configure set aws_access_key_id ${var.access_key} && \
+    aws configure set aws_secret_access_key ${var.secret_key} && \
+    aws configure set region us-east-1 && \
+    aws configure set output json
+
+    ACCOUNT=$(aws sts get-caller-identity --query 'Account' --output text)
+    REGION=us-east-1
+    SECRET_NAME=ecr-secret
+    EMAIL=abc@xyz.com
+    TOKEN=$(aws ecr --region=$REGION get-authorization-token --output text --query authorizationData[].authorizationToken | base64 -d | cut -d: -f2)
+                    
+    kubectl create secret docker-registry $SECRET_NAME \
+      --docker-server=https://$ACCOUNT.dkr.ecr.us-east-1.amazonaws.com \
+      --docker-username=AWS \
+      --docker-password="${TOKEN}" \
+      --docker-email="${EMAIL}"
+
   EOF
   tags = {
     Name = var.name

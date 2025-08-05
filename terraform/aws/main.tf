@@ -37,4 +37,6 @@ module "pic_bucket" {
 module "backend_server" {
   source = "./modules/EC2"
   name = "backend-server"
+  access_key = var.access_key
+  secret_key = var.secret_access_key
 }

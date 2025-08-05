@@ -1,8 +1,3 @@
-variable "image_tag" {
-  description = "The tag of the Docker image to deploy"
-  type        = string  
-}
-
 variable "account_id" {
   description = "The AWS account ID"
   type        = string
@@ -10,5 +5,5 @@ variable "account_id" {
 
 variable "token" {
   description = "The token for the Docker registry"
-  type        = string
+  type        = string 
 }

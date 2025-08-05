@@ -25,7 +25,7 @@ resource "aws_security_group" "allow_ssh" {
 
 resource "aws_instance" "instance" {
   ami = "ami-0c02fb55956c7d316"
-  instance_type = "t3.small"
+  instance_type = "t3.micro"
   key_name = "terraform-key"
   subnet_id = "subnet-0d98153aba45505e1"
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]

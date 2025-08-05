@@ -13,3 +13,13 @@ variable "image" {
   description = "The Docker image to deploy"
   type        = string
 }
+
+variable "db_connection" {
+  description = "db connection string"
+  type        = string
+}
+
+variable "jwt_secret" {
+  description = "JWT secret"
+  type        = string
+}

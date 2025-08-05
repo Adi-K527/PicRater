@@ -30,6 +30,16 @@ resource "kubernetes_deployment" "deployment" {
                     port {
                         container_port = 8080
                     }
+
+                    env {
+                        name  = "Jwt__Secret"
+                        value = var.jwt_secret
+                    }
+
+                    env {
+                        name  = "Db__Connection"
+                        value = "${var.db_connection}"
+                    }
                 }
 
                 image_pull_secrets {

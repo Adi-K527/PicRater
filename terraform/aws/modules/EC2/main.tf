@@ -63,8 +63,8 @@ resource "aws_instance" "instance" {
     kubectl create secret docker-registry $SECRET_NAME \
       --docker-server=https://$ACCOUNT.dkr.ecr.us-east-1.amazonaws.com \
       --docker-username=AWS \
-      --docker-password="${TOKEN}" \
-      --docker-email="${EMAIL}"
+      --docker-password=$TOKEN \
+      --docker-email=$EMAIL
 
   EOF
   tags = {

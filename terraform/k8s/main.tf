@@ -68,8 +68,3 @@ module "pic_service_hpa" {
   app_name = "pic-service"
   depends_on = [ module.pic_service ]
 }
-
-module "ingress" {
-  source = "./modules/ingress"
-  depends_on = [ module.user_service, module.pic_service ]
-}

@@ -1,3 +1,21 @@
+terraform {
+  required_version = ">= 1.0.0, < 2.0.0"
+
+  required_providers {
+    aws = {
+        source  = "hashicorp/aws"
+        version = "~>5.0"
+    }
+  }
+  backend "s3" {
+    bucket  = "picrater-state-bucket-1615"
+    key     = "global/k3s/terraform.tfstate"
+    region  = "us-east-1"
+    encrypt = true
+  }
+}
+
+
 provider "kubernetes" {
   config_path = "${path.module}/../../kubeconfig.yaml"
   insecure    = true

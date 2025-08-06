@@ -61,6 +61,14 @@ resource "kubernetes_deployment" "deployment" {
                     }
                 }
 
+                volume {
+                    name = "logs-volume"
+
+                    persistent_volume_claim {
+                        claim_name = "picrater-pvc"
+                    }
+                }
+
                 image_pull_secrets {
                   name = "ecr-secret"
                 }

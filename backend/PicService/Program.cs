@@ -47,6 +47,7 @@ if (builder.Environment.IsDevelopment())
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
+    .WriteTo.File("/mnt/logs/pic-service.txt")
     .Enrich.FromLogContext()
     .CreateLogger();
 

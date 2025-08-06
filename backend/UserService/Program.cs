@@ -34,6 +34,7 @@ if (builder.Environment.IsDevelopment())
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
+    .WriteTo.File("/mnt/logs/user-service.txt")
     .Enrich.FromLogContext()
     .CreateLogger();
 

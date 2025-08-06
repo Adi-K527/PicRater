@@ -1,3 +1,8 @@
+locals {
+  app_name_parts = split("-", var.app_name)
+}
+
+
 resource "kubernetes_deployment" "deployment" {
     metadata {
         name   = "${var.app_name}-deployment"
@@ -39,6 +44,20 @@ resource "kubernetes_deployment" "deployment" {
                     env {
                         name  = "Db__Connection"
                         value = "${var.db_connection}"
+                    }
+
+                    liveness_probe {
+                        http_get {
+                            path = "/api/${local.app_name_parts[0]}/health"
+                            port = 8080
+                        }
+                        initial_delay_seconds = 30
+                        period_seconds        = 10
+                    }
+
+                    volume_mount {
+                        name       = "logs-volume"
+                        mount_path = "/mnt/logs"
                     }
                 }
 

@@ -80,6 +80,8 @@ resource "aws_instance" "instance" {
       --docker-password=$TOKEN \
       --docker-email=$EMAIL
 
+    mkdir -p /mnt/logs
+
   EOF
   tags = {
     Name = var.name

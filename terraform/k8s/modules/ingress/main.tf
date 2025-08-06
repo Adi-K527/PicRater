@@ -8,6 +8,7 @@ resource "kubernetes_ingress_v1" "ingress" {
       http {
         path {
           path = "/user"
+          path_type = "Prefix"
 
           backend {
             service {
@@ -21,6 +22,7 @@ resource "kubernetes_ingress_v1" "ingress" {
 
         path {
           path = "/pic"
+          path_type = "Prefix"
 
           backend {
             service {

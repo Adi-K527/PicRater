@@ -23,7 +23,7 @@ resource "kubernetes_horizontal_pod_autoscaler_v2" "auto_scaler" {
                 name   = "cpu"
                 target {
                     type  = "Utilization"
-                    value = 50
+                    average_utilization = 50
                 }
             }
         }

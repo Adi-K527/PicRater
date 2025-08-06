@@ -1,4 +1,4 @@
-resource "kubernetes_ingress" "ingress" {
+resource "kubernetes_ingress_v1" "ingress" {
   metadata {
     name = "picrater-ingress"
   }
@@ -10,8 +10,12 @@ resource "kubernetes_ingress" "ingress" {
           path = "/user"
 
           backend {
-            service_name = "user-service-service"
-            service_port = 80
+            service {
+                name = "user-service-service"
+                port {
+                    number = 80
+                }
+            }
           }
         }
 
@@ -19,8 +23,12 @@ resource "kubernetes_ingress" "ingress" {
           path = "/pic"
 
           backend {
-            service_name = "pic-service-service"
-            service_port = 80
+            service {
+                name = "pic-service-service"
+                port {
+                    number = 80
+                }
+            }
           }
         }
       }

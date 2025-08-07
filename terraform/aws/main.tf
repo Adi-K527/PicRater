@@ -30,7 +30,7 @@ resource "aws_ecr_repository" "pic_service_repo" {
 }
 
 module "pic_bucket" {
-  source     = "./modules/S3"
+  source     = "./modules/S3-CloudFront"
   bucket_name = "picrater-pics-8164"
 }
 

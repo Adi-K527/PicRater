@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://localhost:7290'; // UserService
-const PIC_API_BASE_URL = 'https://localhost:7265'; // PicService
+const API_BASE_URL = 'http://52.206.203.115:30080'; // UserService
+const PIC_API_BASE_URL = 'http://52.206.203.115:30081'; // PicService
 
 const api = axios.create({
   baseURL: API_BASE_URL,

@@ -86,9 +86,12 @@ jobs:
           terraform apply -auto-approve -var "image_tag=${{ steps.build-image.outputs.imagetag }}" -var "account_id=${{ secrets.ACCOUNT_ID }}" -var "token=${{ steps.build-image.outputs.token }}" -var "jwt_secret=${{ secrets.JWT_SECRET }}" -var "db_connection=${{ secrets.DB_STRING }}"
 
       - name: Build Frontend Application
+        env:
+          VITE_API_URL: ${{ steps.deploy-cloud.outputs.ip }}
         id: build-frontend
         run: |
               cd frontend
+              echo "VITE_API_URL=${{ steps.deploy-cloud.outputs.ip }}" > .env
               npm i
               npm run build
 

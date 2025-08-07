@@ -12,12 +12,12 @@ resource "aws_s3_bucket_versioning" "s3_bucket_versioning" {
 
 # Public access block - allow public read access
 resource "aws_s3_bucket_public_access_block" "s3_bucket_public_access" {
-    bucket = aws_s3_bucket.s3_bucket.id
+  bucket = aws_s3_bucket.s3_bucket.id
 
-    block_public_acls       = false
-    block_public_policy     = false
-    ignore_public_acls      = false
-    restrict_public_buckets = false
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
 }
 
 data "aws_iam_policy_document" "s3_public_access_document" {

@@ -20,24 +20,17 @@ resource "aws_s3_bucket_public_access_block" "s3_bucket_public_access" {
     restrict_public_buckets = false
 }
 
-# Bucket policy to allow public read access
-resource "aws_s3_bucket_policy" "s3_bucket_policy" {
-    bucket = aws_s3_bucket.s3_bucket.id
+data "aws_iam_policy_document" "s3_public_access_document" {
+  statement {
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.s3_bucket.arn}/*"]
+    effect    = "Allow"
 
-    policy = jsonencode({
-        Version = "2012-10-17"
-        Statement = [
-            {
-                Sid       = "PublicReadGetObject"
-                Effect    = "Allow"
-                Principal = "*"
-                Action    = "s3:GetObject"
-                Resource  = "${aws_s3_bucket.s3_bucket.arn}/*"
-            }
-        ]
-    })
-
-    depends_on = [aws_s3_bucket_public_access_block.s3_bucket_public_access]
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+  }
 }
 
 resource "aws_s3_bucket_policy" "s3_public_access" {

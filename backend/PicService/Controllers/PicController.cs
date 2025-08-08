@@ -160,14 +160,10 @@ namespace PicService.Controllers
 
         private async Task<string> UploadFileAsync(IFormFile file)
         {
-            if (_accessKey == null || _secretKey == null)
-            {
-                throw new InvalidOperationException("AWS credentials are not configured");
-            }
 
             var keyName = "pics/" + Guid.NewGuid() + "_" + file.FileName;
 
-            using var client = new AmazonS3Client(_accessKey, _secretKey, Amazon.RegionEndpoint.USEast1);
+            using var client = new AmazonS3Client(Amazon.RegionEndpoint.USEast1);
             using var stream = file.OpenReadStream();
 
             var uploadRequest = new TransferUtilityUploadRequest
@@ -192,15 +188,9 @@ namespace PicService.Controllers
                 return;
             }
 
-            if (_accessKey == null || _secretKey == null)
-            {
-                _logger.LogWarning("AWS credentials are not configured for file deletion.");
-                return;
-            }
-
             var keyName = imageUrl.Substring(imageUrl.LastIndexOf('/') + 1);
 
-            using var client = new AmazonS3Client(_accessKey, _secretKey, Amazon.RegionEndpoint.USEast1);
+            using var client = new AmazonS3Client(Amazon.RegionEndpoint.USEast1);
             var deleteRequest = new DeleteObjectRequest
             {
                 BucketName = _bucketName,

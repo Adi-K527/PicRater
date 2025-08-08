@@ -22,7 +22,7 @@ resource "aws_s3_bucket_public_access_block" "s3_bucket_public_access" {
 
 data "aws_iam_policy_document" "s3_public_access_document" {
   statement {
-    actions   = ["s3:GetObject"]
+    actions   = ["s3:GetObject", "s3:PutObject"]
     resources = ["${aws_s3_bucket.s3_bucket.arn}/*"]
     effect    = "Allow"
 

@@ -68,13 +68,13 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG:    ${{ github.sha }}
         run: |
+          docker build -t $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG ./backend/PicService --build-arg Jwt__Secret=${{ env.JWT_SECRET }} --build-arg Db__Connection="${{ env.DB_STRING }}" --build-arg Distribution=${{ steps.deploy-cloud.outputs.distribution }} --build-arg Access__Key="${{ env.ACCESS_KEY }}" --build-arg Secret__Key="${{ env.SECRET_ACCESS_KEY }}"
+          docker push $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG
+          echo "image=$ECR_REGISTRY/pic-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
           docker build -t $ECR_REGISTRY/user-service-repo:$IMAGE_TAG ./backend/UserService --build-arg Jwt__Secret=${{ env.JWT_SECRET }} --build-arg Db__Connection="${{ env.DB_STRING }}"
           docker push $ECR_REGISTRY/user-service-repo:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/user-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-          docker build -t $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG ./backend/PicService --build-arg Jwt__Secret=${{ env.JWT_SECRET }} --build-arg Db__Connection="${{ env.DB_STRING }}" --build-arg Distribution=${{ steps.deploy-cloud.outputs.distribution }} --build-arg Access__Key=${{ env.ACCESS_KEY }} --build-arg Secret__Key=${{ env.SECRET_ACCESS_KEY }}
-          docker push $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG
-          echo "image=$ECR_REGISTRY/pic-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
           echo "imagetag=$IMAGE_TAG" >> $GITHUB_OUTPUT
           echo "token=$(aws ecr --region=$REGION get-authorization-token --output text --query authorizationData[].authorizationToken | base64 -d | cut -d: -f2)" >> $GITHUB_OUTPUT

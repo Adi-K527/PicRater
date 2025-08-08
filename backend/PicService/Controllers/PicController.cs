@@ -180,7 +180,7 @@ namespace PicService.Controllers
             var transferUtility = new TransferUtility(client);
             await transferUtility.UploadAsync(uploadRequest);
 
-            return $"https://{_distribution}.cloudfront.net/{keyName}";
+            return $"https://{_distribution}/{keyName}";
         }
 
         private async Task DeleteFileAsync(string imageUrl)

@@ -96,4 +96,4 @@ jobs:
               npm run build
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./frontend/dist/ s3://picrater-pics-8164 --delete
+        run: aws s3 sync ./frontend/dist/ s3://picrater-frontend-8164 --delete

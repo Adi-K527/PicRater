@@ -52,37 +52,10 @@ resource "aws_s3_bucket_cors_configuration" "s3_bucket_cors" {
     }
 }
 
-resource "aws_cloudfront_distribution" "cloudfront_s3_distribution" {
-  origin {
-    domain_name = aws_s3_bucket.s3_bucket.bucket_regional_domain_name
-    origin_id   = aws_s3_bucket.s3_bucket.bucket
+resource "aws_s3_bucket_website_configuration" "s3_static_hosting" {
+  bucket = aws_s3_bucket.s3_bucket.id
 
-      s3_origin_config {
-        origin_access_identity = ""
-      }
+  index_document {
+    suffix = "index.html"
   }
-
-  default_cache_behavior {
-    cache_policy_id         = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad"
-    cached_methods          = ["GET", "HEAD"]
-    allowed_methods         = ["GET", "HEAD"]
-    target_origin_id        = aws_s3_bucket.s3_bucket.bucket
-    viewer_protocol_policy  = "allow-all"
-  }
-
-  restrictions {
-    geo_restriction {
-      restriction_type = "none"
-    }
-  }
-
-  viewer_certificate {
-    cloudfront_default_certificate = true
-  }
-
-  enabled         = true
-  is_ipv6_enabled = true
-  price_class     = "PriceClass_100"
-
-  depends_on      = [ aws_s3_bucket_policy.s3_public_access ] 
 }

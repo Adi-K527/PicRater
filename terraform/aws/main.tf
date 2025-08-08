@@ -30,6 +30,11 @@ resource "aws_ecr_repository" "pic_service_repo" {
 }
 
 module "pic_bucket" {
+  source     = "./modules/S3"
+  bucket_name = "picrater-frontend-8164"
+}
+
+module "pic_bucket" {
   source     = "./modules/S3-CloudFront"
   bucket_name = "picrater-pics-8164"
 }

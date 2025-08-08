@@ -72,7 +72,7 @@ jobs:
           docker push $ECR_REGISTRY/user-service-repo:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/user-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-          docker build -t $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG ./backend/PicService --build-arg Jwt__Secret=${{ env.JWT_SECRET }} --build-arg Db__Connection="${{ env.DB_STRING }}" --build-arg Distribution=${{ steps.deploy-cloud.outputs.distribution }}
+          docker build -t $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG ./backend/PicService --build-arg Jwt__Secret=${{ env.JWT_SECRET }} --build-arg Db__Connection="${{ env.DB_STRING }}" --build-arg Distribution=${{ steps.deploy-cloud.outputs.distribution }} --build-arg Access__Key=${{ env.ACCESS_KEY }} --build-arg Secret__Key=${{ env.SECRET_ACCESS_KEY }}
           docker push $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/pic-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
 

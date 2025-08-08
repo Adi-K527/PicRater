@@ -3,9 +3,11 @@ WORKDIR /src
 
 ARG Jwt__Secret
 ARG Db__Connection
+ARG Distribution
 
 ENV Jwt__Secret=$Jwt__Secret
 ENV Db__Connection=$Db__Connection
+ENV Distribution=$Distribution
 
 COPY . .
 

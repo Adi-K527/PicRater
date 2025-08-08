@@ -44,6 +44,7 @@ jobs:
           terraform init
           terraform apply -auto-approve -var "access_key=${{ env.ACCESS_KEY }}" -var "secret_access_key=${{ env.SECRET_ACCESS_KEY }}"
           echo "ip=$(terraform output -raw public_ip)" >> $GITHUB_OUTPUT
+          echo "distribution=$(terraform output -raw distribution)" >> $GITHUB_OUTPUT
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
@@ -71,7 +72,7 @@ jobs:
           docker push $ECR_REGISTRY/user-service-repo:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/user-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-          docker build -t $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG ./backend/PicService --build-arg Jwt__Secret=${{ env.JWT_SECRET }} --build-arg Db__Connection="${{ env.DB_STRING }}"
+          docker build -t $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG ./backend/PicService --build-arg Jwt__Secret=${{ env.JWT_SECRET }} --build-arg Db__Connection="${{ env.DB_STRING }}" --build-arg Distribution=${{ steps.deploy-cloud.outputs.distribution }}
           docker push $ECR_REGISTRY/pic-service-repo:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/pic-service-repo:$IMAGE_TAG" >> $GITHUB_OUTPUT
 

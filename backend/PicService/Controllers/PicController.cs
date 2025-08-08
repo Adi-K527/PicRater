@@ -19,6 +19,7 @@ namespace PicService.Controllers
     {
         private readonly PicContext _context;
         private readonly ILogger<PicController> _logger;
+        private readonly string _bucketName = "picrater-pics-8164";
         private readonly string _distribution = Environment.GetEnvironmentVariable("Distribution");
         private readonly string? _accessKey = Environment.GetEnvironmentVariable("Access__Key");
         private readonly string? _secretKey = Environment.GetEnvironmentVariable("Secret__Key");
